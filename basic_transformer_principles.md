@@ -20,3 +20,16 @@ sentence_int = torch.tensor(
 )
 print(sentence_int)
 ```
+
+Now, use torch nn embedding to make an embedding tensor
+```python
+vocab_size = 50_000
+​
+torch.manual_seed(123)
+embed = torch.nn.Embedding(vocab_size, 3)
+embedded_sentence = embed(sentence_int).detach()
+​
+print(embedded_sentence)
+print(embedded_sentence.shape)
+```
+
